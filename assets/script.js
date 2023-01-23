@@ -12,16 +12,24 @@
 //Save the event in local storage when the save button is clicked in that timeblock.
 //Persist events between refreshes of a page
 
+
+var currentTime = moment().format('k');
+
 $(document).ready(function() {
     var currentDay = moment().format('dddd' + ', ' + 'MMMM Do YYYY');
     $('#currentDay').text(currentDay);
     
-    var businessHours = ['9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM'];
-    
-    
-    
-    
-    
-    
-    
+    //For each element that has class "hour", get it's id and compare to current time
+    $( ".hour" ).each(function( index ) {
+        var hourId = parseInt($(this).attr("id"));
+        if (hourId == currentTime) {
+            $(this).next().addClass("present");
+          } else if (hourId < currentTime) {
+            $(this).next().addClass("past");
+          } else if (hourId > currentTime) {
+            $(this).next().addClass("future");
+          }
+      });
+
+
     });
