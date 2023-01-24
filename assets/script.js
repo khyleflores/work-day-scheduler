@@ -14,6 +14,9 @@
 //Get current hour using moment
 var currentTime = moment().format('k');
 
+// Array where the localstorage events details will be stored
+var timeEventLocalstorage = [];
+
 $(document).ready(function() {
     //Get and assign current day using moment and format to ie Thursday, September 5th
     var currentDay = moment().format('dddd' + ', ' + 'MMMM Do YYYY');
@@ -34,5 +37,12 @@ $(document).ready(function() {
           }
       });
 
+      $(".saveBtn").on("click", function (event) {
+        //get the value of the text area using prev() - Get the immediately preceding sibling of each element
+        var timeEvent = $(this).prev().val();;
+        console.log(timeEvent);
+        console.log(event.target.attributes[0].value);
+        //localStorage.setItem(event.target.attributes[0].value, timeEvent);
+      });
 
     });
