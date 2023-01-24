@@ -32,17 +32,26 @@ $(document).ready(function() {
             $(this).next().addClass("present");
           } else if (hourId < currentTime) {
             $(this).next().addClass("past");
-          } else if (hourId > currentTime) {
+          } else {
             $(this).next().addClass("future");
           }
       });
 
+      //Event function for Save button with class of .saveBtn
       $(".saveBtn").on("click", function (event) {
         //get the value of the text area using prev() - Get the immediately preceding sibling of each element
         var timeEvent = $(this).prev().val();;
         console.log(timeEvent);
         console.log(event.target.attributes[0].value);
-        //localStorage.setItem(event.target.attributes[0].value, timeEvent);
+        //save the event to local storage
+        localStorage.setItem(event.target.attributes[0].value, timeEvent);
+      });
+
+      //console.log(localStorage["5pm"]);
+
+      $.each([ "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm" ], function( index, value ) {
+        //console.log(localStorage[value]);
+        $( "#" + value + "Event" ).text(localStorage[value]);
       });
 
     });
