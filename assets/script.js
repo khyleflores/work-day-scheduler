@@ -22,7 +22,7 @@ $(document).ready(function() {
   //Event function for Save button with class of .saveBtn
   $(".saveBtn").on("click", function (event) {
     //get the value of the text area using prev() - Get the immediately preceding sibling of each element
-    var timeEvent = $(this).prev().val();;
+    var timeEvent = $(this).prev().val();
     //save the event to local storage
     localStorage.setItem(event.target.attributes[0].value, timeEvent);
   });

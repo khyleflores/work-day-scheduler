@@ -5,6 +5,9 @@ This application is a simple calendar application that allows a user to save eve
 
 This application shows the current day at the top of the calender when a user opens the planner. It presents timeblocks for standard business hours when the user scrolls down. Each timeblock is color-coded based on the time whether it is past, present and future. It also allows the user to add important events when they click the timeblock and save button. Data will be saved in local storage and can be viewed even when page is refreshed. 
 
+## Technologies Used
+HTML | Javascript | JQuery | CSS | Bootstrap | MomentJS | Local Storage
+
 ## Installation
 
 N/A
